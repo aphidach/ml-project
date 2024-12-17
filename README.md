@@ -23,17 +23,19 @@ This is an interactive web application that creates a festive particle system us
 ## Prerequisites
 
 - Modern web browser
-- Basic understanding of JavaScript
-- Node.js (optional, for local development)
+- Webcam for hand pose detection
+- Good lighting conditions
 
 ## Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/aphidach/ml-project.git
 ```
 
 2. Navigate to the project directory:
+
 ```bash
 cd ml-project
 ```
@@ -42,9 +44,17 @@ cd ml-project
 
 ## Usage
 
-- Click and drag on the screen to generate particles
-- Hover over elements to see interactive animations
+- Position your hand in front of the webcam
+- Move your hand to generate and interact with particles
+- Watch as particles spawn and move based on your hand's position
 - Enjoy the festive Christmas theme!
+
+## How It Works
+
+- ML5.js detects hand landmarks
+- Particle system generates particles based on hand movement
+- Particles interact with the detected hand pose
+- Festive visual effects enhance the experience
 
 ## Color Palette
 
