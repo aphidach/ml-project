@@ -1,0 +1,116 @@
+:root {
+    --color-dark-red: #A835353D;
+    --color-forest-green: #53814A;
+    --color-icy-blue: #EEF9FD;
+    --color-bright-yellow: #FFFF5C;
+    --color-rich-brown: #5F473B;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--color-dark-red);
+    font-family: 'Christmas', 'Arial', sans-serif;
+    perspective: 1000px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.main {
+    background-color: var(--color-forest-green);
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    padding: 30px;
+    text-align: center;
+    max-width: 740px;
+    width: 90%;
+    transition: all 0.3s ease;
+}
+
+/* .main:hover {
+    transform: scale(1.05) rotate3d(1, 1, 1, 5deg);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+} */
+
+@keyframes gradientSlide {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.main-text {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(
+        45deg, 
+        /* var(--color-dark-red),  */
+        var(--color-forest-green), 
+        var(--color-icy-blue), 
+        var(--color-bright-yellow) 
+        /* var(--color-rich-brown) */
+    );
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientSlide 10s ease infinite;
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+    margin: 0;
+}
+
+/* Festive Snow Effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+/* Snowflake Animation */
+@keyframes snowfall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+.snowflake {
+    position: fixed;
+    top: -10px;
+    background-color: var(--color-bright-yellow);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    animation: snowfall linear infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .main-text {
+        font-size: 2rem;
+    }
+}

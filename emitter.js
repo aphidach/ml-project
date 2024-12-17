@@ -9,11 +9,14 @@ class Emitter {
   }
 
   addParticle() {
-    this.particles.push(new Particle(this.origin.x, this.origin.y));
+    const items = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
+
+    // Get a random index (0, 1, 2, or 3)
+    const rand = Math.floor(Math.random() * items.length);
+    this.particles.push(new Particle(this.origin.x, this.origin.y, items[rand]));
   }
 
   run() {
-    // Looping through backwards to delete
     for (let i = this.particles.length  - 1; i >= 0; i--) {
       this.particles[i].run();
       if (this.particles[i].isDead()) {
