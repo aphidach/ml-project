@@ -6,23 +6,32 @@ let poses= [];
 let lastParticleTime = 0; // Timer for controlling particle emission
 let hands = [];
 let emitters = [];
-let img;
+let img1;
+let img2;
+let img3;
+let img4;
+let img5;
+let img6;
+let img7;
+let img8;
+let img9;
+let img10;
 
 let audioPlayer;
 
 
 function preload() {
   handPose = ml5.handPose();
-  img1 = loadImage('1.png');
-  img2 = loadImage('2.png');
-  img3 = loadImage('3.png');
-  img4 = loadImage('4.png');
-  img5 = loadImage('5.png');
-  img6 = loadImage('6.png');
-  img7 = loadImage('7.png');
-  img8 = loadImage('8.png');
-  img9 = loadImage('9.png');
-  img10 = loadImage('10.png');
+  img1 = loadImage('/image/1.png');
+  img2 = loadImage('/image/2.png');
+  img3 = loadImage('/image/3.png');
+  img4 = loadImage('/image/4.png');
+  img5 = loadImage('/image/5.png');
+  img6 = loadImage('/image/6.png');
+  img7 = loadImage('/image/7.png');
+  img8 = loadImage('/image/8.png');
+  img9 = loadImage('/image/9.png');
+  img10 = loadImage('/image/10.png');
 }
 
 function mousePressed() {

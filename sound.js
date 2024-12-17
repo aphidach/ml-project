@@ -2,7 +2,7 @@ let sound;
 let isPlaying = false;
 
 window.addEventListener("DOMContentLoaded", () => {
-  sound = new Audio("3minutePerLoop.MP3");
+  sound = new Audio("/sound/3minutePerLoop.MP3");
   sound.loop = true;
 
   const soundButton = document.getElementById("soundButton");

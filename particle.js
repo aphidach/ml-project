@@ -1,55 +1,3 @@
-// // // The Nature of Code
-// // // Daniel Shiffman
-// // // http://natureofcode.com
-
-
-// // A simple Particle class
-// let imageLoad
-// class Particle {
-//   constructor(x, y, img) {
-//     this.position = createVector(x, y);
-//     this.acceleration = createVector(0, 0);
-//     this.velocity = p5.Vector.random2D();
-//     this.velocity.mult(random(1, 2));
-//     this.lifespan = 1500.0;
-//     this.icon = '👿';
-//     this.img = img
-//   }
-
-//   run() {
-//     let gravity = createVector(0, -0.001);
-//     this.applyForce(gravity);
-//     this.update();
-//     this.show();
-//   }
-
-//   applyForce(force) {
-//     this.acceleration.add(force);
-//   }
-
-//   // Method to update position
-//   update() {
-//     this.velocity.add(this.acceleration);
-//     this.position.add(this.velocity);
-//     this.lifespan -= 8;
-//     this.acceleration.mult(0);
-//   }
-
-//   // Method to display
-// show() {
-//     noStroke();
-//     fill(255, this.lifespan);
-
-//     // Display the selected image
-//     image(this.img, this.position.x, this.position.y, 60, 60);
-// }
-
-
-//   // Is the particle still useful?
-//   isDead() {
-//     return this.lifespan < 0.0;
-//   }
-// }
 class Particle {
   constructor(x, y, img) {
     // Randomize initial position with some spread around x, y
@@ -76,7 +24,7 @@ class Particle {
     
     // Rotation for more dynamic movement
     this.rotation = random(0, TWO_PI);
-    this.rotationSpeed = random(-0.005, 0.005);
+    this.rotationSpeed = random(-0.01, 0.01);
     
     // Store the image
     this.img = img;
