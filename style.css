@@ -1,9 +1,9 @@
 :root {
-    --color-dark-red: #A835353D;
-    --color-forest-green: #53814A;
-    --color-icy-blue: #EEF9FD;
-    --color-bright-yellow: #FFFF5C;
-    --color-rich-brown: #5F473B;
+    --color-deep-red: #8B0000;
+    --color-pine-green: #01796F;
+    --color-snow-white: #F0F0F0;
+    --color-christmas-gold: #FFD700;
+    --color-holly-green: #02623E;
 }
 
 body {
@@ -13,9 +13,14 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: var(--color-dark-red);
-    font-family: 'Christmas', 'Arial', sans-serif;
+    background: linear-gradient(
+        135deg, 
+        var(--color-deep-red), 
+        var(--color-holly-green)
+    );
+    font-family: 'Christmas Cheer', 'Arial', sans-serif;
     perspective: 1000px;
+    overflow: hidden;
 }
 
 .container {
@@ -27,20 +32,19 @@ body {
 }
 
 .main {
-    background-color: var(--color-forest-green);
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    box-shadow: 
+        0 15px 30px rgba(0,0,0,0.3),
+        0 0 20px rgba(255,255,255,0.2) inset;
     padding: 30px;
     text-align: center;
     max-width: 740px;
     width: 90%;
     transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 3px solid rgba(255, 255, 255, 0.2);
 }
-
-/* .main:hover {
-    transform: scale(1.05) rotate3d(1, 1, 1, 5deg);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-} */
 
 @keyframes gradientSlide {
     0%, 100% {
@@ -57,22 +61,20 @@ body {
     text-align: center;
     background: linear-gradient(
         45deg, 
-        /* var(--color-dark-red),  */
-        var(--color-forest-green), 
-        var(--color-icy-blue), 
-        var(--color-bright-yellow) 
-        /* var(--color-rich-brown) */
+        var(--color-christmas-gold), 
+        var(--color-snow-white), 
+        var(--color-deep-red)
     );
     background-size: 400% 400%;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     animation: gradientSlide 10s ease infinite;
-    text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
     margin: 0;
 }
 
-/* Festive Snow Effect */
+/* Christmas Tree Background Effect */
 body::before {
     content: '';
     position: fixed;
@@ -82,30 +84,56 @@ body::before {
     height: 100%;
     pointer-events: none;
     background-image: 
-        linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
-    background-size: 30px 30px;
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 20px,
+            rgba(255,255,255,0.05) 20px,
+            rgba(255,255,255,0.05) 40px
+        );
     opacity: 0.6;
     z-index: -1;
 }
 
-/* Snowflake Animation */
-@keyframes snowfall {
+/* Festive Ornament Snowflakes */
+@keyframes ornamentFall {
     to {
-        transform: translateY(100vh);
+        transform: translateY(100vh) rotate(360deg);
     }
 }
 
 .snowflake {
     position: fixed;
     top: -10px;
-    background-color: var(--color-bright-yellow);
-    width: 5px;
-    height: 5px;
+    background: radial-gradient(
+        circle at center, 
+        var(--color-christmas-gold), 
+        var(--color-deep-red)
+    );
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
+    box-shadow: 0 0 10px var(--color-christmas-gold);
     pointer-events: none;
     z-index: 9999;
-    animation: snowfall linear infinite;
+    animation: ornamentFall linear infinite;
+}
+
+/* Ornament Variation */
+.snowflake:nth-child(4n) {
+    background: radial-gradient(
+        circle at center, 
+        var(--color-snow-white), 
+        var(--color-pine-green)
+    );
+}
+
+.snowflake:nth-child(7n) {
+    background: radial-gradient(
+        circle at center, 
+        var(--color-pine-green), 
+        var(--color-holly-green)
+    );
 }
 
 /* Responsive Design */
@@ -113,4 +141,50 @@ body::before {
     .main-text {
         font-size: 2rem;
     }
+}
+
+/* Christmas Tree Shadow Hint */
+body::after {
+    content: '';
+    position: fixed;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 200px;
+    height: 300px;
+    background: linear-gradient(
+        var(--color-holly-green), 
+        var(--color-pine-green)
+    );
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    opacity: 0.2;
+    z-index: -2;
+}
+
+.button {
+    margin: 10px;
+    position: relative;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--color-snow-white);
+    background-color: var(--color-deep-red);
+    border: 1px solid var(--color-christmas-gold);
+    border-radius: 30px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 4px 6px rgba(0,0,0,0.3),
+        0 0 15px var(--color-christmas-gold);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.button:hover {
+    transform: scale(1.05);
+    background-color: var(--color-holly-green);
+    box-shadow: 
+        0 6px 8px rgba(0,0,0,0.4),
+        0 0 25px var(--color-christmas-gold);
 }
