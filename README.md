@@ -90,7 +90,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Your Name - [aphidach.p@kkumail.com]
 
-Project Link: [https://ml-demo.apxi.xyz/](https://github.com/yourusername/christmas-particle-emitter)
+Project Link: [ml-demo.apxi.xyz](https://ml-demo.apxi.xyz/)
 
 ## Acknowledgments
 
